@@ -1,0 +1,21 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "nomad-econversion-plugins"
+version = "0.1.0"
+description = "Schema packages for the eConversion NOMAD Oasis"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+dependencies = ["nomad-lab>=1.4.3"]
+
+[project.urls]
+repository = "https://github.com/cates-tum/nomad-econversion-plugins"
+
+[project.entry-points.'nomad.plugin']
+grill_attempt = "nomad_econversion_plugins.schema_packages:grill_attempt"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/nomad_econversion_plugins"]
